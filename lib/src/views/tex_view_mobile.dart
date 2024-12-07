@@ -86,7 +86,9 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
           .runJavaScriptReturningResult("initView(${getRawData(widget)})");
 
       // Scroll to top akib
-      _controller.runJavaScriptReturningResult("window.scrollTo(0, 0);");
+      Future.delayed(Duration(milliseconds: 300), () {
+        _controller.runJavaScriptReturningResult("window.scrollTo(0, 0);");
+      });
       _lastData = getRawData(widget);
     }
   }
