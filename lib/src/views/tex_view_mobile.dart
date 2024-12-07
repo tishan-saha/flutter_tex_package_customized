@@ -45,7 +45,7 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
             _height = height;
           });
         }
-        widget.onRenderFinished?.call(height);
+        // widget.onRenderFinished?.call(height);
       });
     super.initState();
   }
@@ -85,8 +85,8 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
       _controller
           .runJavaScriptReturningResult("initView(${getRawData(widget)})");
 
-      // Scroll to top
-      _controller.runJavaScriptReturningResult("window.scrollTo(0, 0);");
+      // Scroll to top akib
+      _controller.runJavaScriptReturningResult("window.scrollTo(0, 1);");
       _lastData = getRawData(widget);
     }
   }
