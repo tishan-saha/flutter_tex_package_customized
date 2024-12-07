@@ -90,6 +90,11 @@ class TeXViewState extends State<TeXView> with AutomaticKeepAliveClientMixin {
         _controller.runJavaScriptReturningResult(
             "window.scrollTo({top: 0, behavior: 'smooth'})");
       });
+      AnimatedContainer(
+        duration: Duration(milliseconds: 300),
+        curve: Curves.easeInSine,
+        // Your animation properties here
+      );
       _lastData = getRawData(widget);
     }
   }
